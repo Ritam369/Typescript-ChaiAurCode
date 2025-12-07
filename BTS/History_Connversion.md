@@ -36,7 +36,7 @@ TypeScript is internally converted into JavaScript through a process called **tr
 ### 5. Emitter Stage (Code Generation)
 - The compiler generates the final **JavaScript (`.js`) files**.  
 - It also optionally produces **declaration files (`.d.ts`)** containing type definitions.  
-- During emission, all unnecessary TypeScript-only constructs (types, annotations, interfaces) are stripped away.  
+- During emission, all unnecessary TypeScript-only constructs (types, annotations, interfaces) are stripped away. This stripping out functionality is also included in Node, that's why node can run a ts file very easily if it also contain any error. 
 - The output is clean, executable JavaScript that can run in any environment.  
 
 ---
@@ -74,7 +74,7 @@ function greet(name) {
 ## 🪄 TypeScript Compilation Pipeline — Flowchart
 ```mermaid
 flowchart TD
-    A[Parsing Stage<br/>Tokenizing + AST Creation] --> B[Binding Stage<br/>Symbol Table + Flow Nodes]
+    A[Scanning & Parsing Stage<br/>Tokenizing + AST Creation] --> B[Binding Stage<br/>Symbol Table + Flow Nodes]
     B --> C[Checker Stage<br/>Type + Syntax Validation]
     C --> D[Transformation Stage<br/>TS Constructs Rewritten]
     D --> E[Emitter Stage<br/>JavaScript Output]
