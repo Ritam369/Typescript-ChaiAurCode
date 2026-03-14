@@ -1,9 +1,9 @@
 // same parameter can have two different data types
 function getChai(kind: string | number): string {
   if (typeof kind === "string") {
-    return `Chai ${kind}`;
+    return `Chai ${kind}`; //By this, can have the in-built methods of string only
   }
-  return `Chai ${kind}ml`;
+  return `Chai ${kind}ml`; //By this, can have the in-built methods of number only
 }
 
 console.log(getChai("Black"));
@@ -34,24 +34,24 @@ console.log(orderChai("medium"));
 console.log(orderChai(250));
 
 //Type-Guards
-// class KulhadChai {
-//   serve() {
-//     return `Serving Kulhad Chai`;
-//   }
-// }
-// class CuttingChai {
-//   serve() {
-//     return `Serving Cutting Chai`;
-//   }
-// }
+class KulhadChai {
+  serve() {
+    return `Serving Kulhad Chai`;
+  }
+}
+class CuttingChai {
+  serve() {
+    return `Serving Cutting Chai`;
+  }
+}
 
-// function serve(kind: KulhadChai | CuttingChai) {
-//   if (kind instanceof KulhadChai) {
-//     console.log(kind.serve());
-//   } else {
-//     console.log(kind.serve());
-//   }
-// }
+function serve(kind: KulhadChai | CuttingChai) {
+  if (kind instanceof KulhadChai) {
+    console.log(kind.serve());
+  } else {
+    console.log(kind.serve());
+  }
+}
 
 
 //Creating our own class by using 'type' keyword
