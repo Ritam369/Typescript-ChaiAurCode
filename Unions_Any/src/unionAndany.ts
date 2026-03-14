@@ -1,4 +1,4 @@
-//union - when it's not ceratin that what will be the datatype of a variable then we use union
+//union - when it's not certain that what will be the exact datatype of a variable then we use union to have multiple datatype options
 
 //Example of union
 let subs: string | number = "1M" //100 possible
@@ -11,8 +11,8 @@ let airlineSeat: "aisle" | "middle" | "window" = "aisle"
 
 console.log({ subs, apiRequestStatus, airlineSeat })
 
-//any - when we don't want to specify any datatype or any specified value for a variable then we use any
-//We will try to avoid any, but might need to use as per the requirement
+//`any` - when we don't want to specify any datatype or any specified value for a variable then we use `any`
+//NOTE: We will try to avoid `any`, but might need to use as per the requirement
 
 let currentOrder //if we don't assign anything then it will take cuurrentOrder: any
 let orders = ['10','23','56']

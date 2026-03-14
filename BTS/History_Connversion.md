@@ -1,7 +1,7 @@
 # TypeScript Compilation and History
 
 ## 📖 Introduction
-TypeScript is a **superset of JavaScript** that adds optional static typing, interfaces, and other advanced features. It was designed to make large-scale JavaScript applications easier to build and maintain. Ultimately, TypeScript code is always converted into plain JavaScript so it can run in browsers or Node.js.
+TypeScript is a **superset of JavaScript** that adds typing, interfaces, and other advanced features. It was designed to make large-scale JavaScript applications easier to build and maintain. Ultimately, TypeScript code is always converted into plain JavaScript so it can run in browsers or Node.js. TypeScript is never understood by the browser as it only understands HTML, CSS & JS. So internally TS gets converted into JS and that JS won't have any error as TS will already show it. 
 
 ---
 
@@ -9,14 +9,14 @@ TypeScript is a **superset of JavaScript** that adds optional static typing, int
 TypeScript is internally converted into JavaScript through a process called **transpilation**, handled by the TypeScript compiler (`tsc`). The compilation pipeline consists of several stages:
 
 ### 1. Parsing Stage (Lexical & Syntactic Analysis)
-- The compiler reads the `.ts` file and breaks it into tokens (keywords, identifiers, operators).  
-- It builds an **Abstract Syntax Tree (AST)**, representing the logical structure of the code.  
+- **(Lexer)** The compiler reads the `.ts` file and breaks it into tokens (keywords, identifiers, operators). 
+- **(Parser)** It builds an *Abstract Syntax Tree (AST)*, representing the logical structure of the code.  
 
 ### 2. Binding Stage (Symbol Table Generation)
 - The compiler creates a **symbol table** that maps identifiers (variables, functions, classes) to their definitions.  
 - This stage also records **data types** associated with each symbol and saves them into symbol table.  
-- **Flow nodes** are generated to represent control flow (loops, conditionals statements, branches).  
 - **Parent nodes** are linked to child nodes, establishing hierarchical relationships in the AST.  
+- **Flow nodes** are generated to represent control flow (loops, conditionals statements, branches).  
 - This stage ensures that references to variables and functions are correctly bound to their declarations.  
 
 ### 3. Checker Stage (Type & Syntax Validation) (Checks for 2 times)
@@ -88,7 +88,7 @@ flowchart TD
 npm install -g typescript
 
 # Or install locally for a project
-npm install typescript --save-dev
+npm install typescript -D
 ```
 
 ---
