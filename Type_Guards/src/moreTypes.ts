@@ -2,10 +2,10 @@ let response: any = "56";
 
 // let numericLength: number = response.length;
 // Ei case e kaaj kore jacche but string er different properties ba methods er suggestion kno asche nah??
-// Karon response deoa ache 'any', so variable taake string bhebe seta niye kaaj korar kono upay neii...Ei case forcefully type assertion korte hbe
+// Karon response deoa ache 'any', so variable taake string bhebe seta niye kaaj korar kono upay neii...Ei case (forcefully type assertion) korte hbe
 
 let numericLength: number = (response as string).length; //Forcefully type assertion
-// (response as string) bolte bojhacche user guarantee diye bolche je response ta string
+// (response as string) bolte bojhacche user guarantee diye bolche je response ta string tomake eta niye beshi r bhabte hbe nah
 
 console.log(numericLength);
 
@@ -14,7 +14,7 @@ type book = {
 };
 
 let bookString: string = '{"name":"ABCD"}';
-let bookObject: book = JSON.parse(bookString) as book; //Forcefully type assertion
+let bookObject: book = JSON.parse(bookString) as book; //Forcefully type assertion as there is no guarantee that the parsed object will be of type book
 
 console.log(bookObject);
 
@@ -24,3 +24,7 @@ console.log(bookObject);
 
 let value:number = Number("45")
 console.log(value)
+
+
+const data: unknown = "chai aur code"
+const newData: string = data as string //forceful type assertion korte hocche as there is no guarantee that data value is string as it's 'unknown'

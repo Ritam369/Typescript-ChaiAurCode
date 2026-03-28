@@ -1,7 +1,8 @@
 //Difference between any and unknown
-// Any is a type that can be anything, including undefined and null.
-// Unknown is a type that can be anything, but it must be checked before it can be used, call, construct, access props.
-// For example, if you have a variable of type unknown, you can't call any methods on it without first checking its type.
+// any is a type that can be anything, including undefined and null.
+// unknown is a type that can be anything, but it must be defined before it can be used, call, construct, access props.
+
+//NOTE, For example, if you have a variable of type unknown, you can't call any methods on it without first checking its type.
 
 //any use korle amra kokhonoi pore type define kore ditam nah variable taar jaar jonno undefined niye nito
 //unknown er case e amra initially toh variable taake kono type assign korchi nah thikache, but use korar aage type assign kore dite hbe
@@ -29,3 +30,8 @@ if (typeof unknownVar === "string") {
 // console.log(anyVar.toUpperCase());
 // console.log(anyVar.toFixed(2));
 // console.log(anyVar ? "Yes" : "No");
+
+
+
+const data: unknown = "ChaiCode"
+const strData = data as string //Type assertion

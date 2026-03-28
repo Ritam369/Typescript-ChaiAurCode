@@ -12,7 +12,8 @@ value2 = "Hello, world!";
 value2 = true;
 
 // console.log(value2.toUpperCase()); //Run korar aagei error show kore dicche
-//To solve this, we need to use type-guards
+
+//To solve this, we need to use type-narrowing
 if (typeof value2 === "string") {
   console.log(value2.toUpperCase());
 }

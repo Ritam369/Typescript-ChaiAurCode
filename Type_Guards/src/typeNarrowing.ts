@@ -1,4 +1,4 @@
-// same parameter can have two different data types
+// same parameter can have two different data types using union
 function getChai(kind: string | number): string {
   if (typeof kind === "string") {
     return `Chai ${kind}`; //By this, can have the in-built methods of string only
@@ -54,7 +54,7 @@ function serve(kind: KulhadChai | CuttingChai) {
 }
 
 
-//Creating our own class by using 'type' keyword
+//Creating our own datatype by using 'type' keyword
 type ChaiOrder = {
   name : string;
   sugarLevel: number;
@@ -65,6 +65,16 @@ function prepareChai(obj: any /* unknown dile error show korche karon ekdom sesh
     typeof obj === "object" && obj!=null && typeof obj.name === "string" && typeof obj.sugarLevel === "number"
   )
 } 
+
+/* 
+As for what it returns — it returns a boolean, but not just any boolean. The return type obj is ChaiOrder is a type predicate. So:
+
+at runtime, it returns true or false
+but when TypeScript sees true, it narrows the type of obj to ChaiOrder in that scope
+So the function is essentially a custom type guard. 
+
+Without the obj is ChaiOrder predicate, even if the checks passed, TypeScript would still treat obj as any. The predicate is what tells the compiler "trust me, if this returns true, the type is ChaiOrder."
+*/
 
 function servingOrder(item: ChaiOrder | string) {
   if (prepareChai(item)) {
